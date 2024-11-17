@@ -1,0 +1,57 @@
+/* Hide the checkbox input */
+#inp {
+    display: none;
+}
+  
+/* Toggle Switch Container */
+.toggle {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+/* Circle inside the toggle */
+.toggle::before {
+    display: inline-block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    margin: 2.5px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+  
+/* When checkbox is checked */
+#inp:checked + .toggle {
+    background-color: rgb(96, 96, 218);
+}
+  
+#inp:checked + .toggle::before {
+    transform: translateX(25px);
+}
+
+/* Navigation Bar Styling */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+nav div {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+nav div:first-child img {
+    width: 40px;
+    border-radius: 100%;
+}

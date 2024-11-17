@@ -1,0 +1,142 @@
+/* Reset basic styling */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Default (Light) theme variables */
+  :root {
+    --bg-color: #ffffff;          /* Background color */
+    --text-color: #333;           /* Text color */
+    --navbar-bg: #f8f9fa;         /* Navbar background */
+    --navbar-text: #333;          /* Navbar text */
+    --button-bg: #3498db;         /* Button background */
+    --button-text: #fff;          /* Button text */
+    --toggle-bg: #eedfdf;         /* Toggle background */
+    --toggleBefore-bg: white;     /* Toggle circle color */
+    --nav-cl: black;              /* Navbar text color */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+    --hover-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Hover shadow */
+    --link-color: #3498db;        /* Link color */
+  }
+  
+  /* Dark theme variables */
+  body.dark {
+    --bg-color: #333;             /* Background color */
+    --text-color: #f9f9f9;        /* Text color */
+    --navbar-bg: #222;            /* Navbar background */
+    --navbar-text: #f9f9f9;       /* Navbar text */
+    --button-bg: #444;            /* Button background */
+    --button-text: #f9f9f9;       /* Button text */
+    --toggle-bg: #444;            /* Toggle background */
+    --toggleBefore-bg: #fff;      /* Toggle circle color */
+    --nav-cl: white;              /* Navbar text color */
+    --box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Box shadow */
+    --hover-box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2); /* Hover shadow */
+    --link-color: #3498db;        /* Link color */
+  }
+  
+  /* Apply theme styles */
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  nav {
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+  }
+  
+  nav:hover {
+    box-shadow: var(--hover-box-shadow);
+  }
+  
+  button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: darken(var(--button-bg), 10%);
+  }
+  
+  .toggle {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    background-color: var(--toggle-bg);
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 2.5px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    background-color: var(--toggleBefore-bg);
+    transition: transform 0.3s ease;
+  }
+  
+  #inp:checked + .toggle {
+    background-color: rgb(96, 96, 218);
+  }
+  
+  #inp:checked + .toggle::before {
+    transform: translateX(25px);
+  }
+  
+  /* User Card and other components */
+  .user-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-box-shadow);
+  }
+  
+  .user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .user-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  
+  .user-email {
+    font-size: 14px;
+    color: var(--text-color);
+  }
+  
